@@ -1,0 +1,153 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" href="style/style1.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Tomorrow:ital@1&family=Wallpoet&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="desktop">
+
+    <div class="top_bar">
+      <div class="widget1">SECTOR: 23</div>
+    </div>
+
+    <div class="bottom_bar">
+      <div class="widget2">CURRENT ORBIT: 29</div>
+    </div>
+
+    <div class="app1_icon">
+      <div>Latinum Calculator</div>
+    </div>
+    <div class="app2_icon">
+      <div>Kanye Newsfeed</div>
+    </div>
+    <div class="app3_icon">
+      <div>Variance Analysis Scope</div>
+    </div>
+
+    <div class="calc_main">
+
+      <div class="panel1">
+
+        <div class="display1">
+          <table class="info1">
+            <tr>
+              <td class="title">EXCH RATE</td>
+              <td class="exch_rate_display">27.14</td>
+              <td class="title">TAX</td>
+              <td class="tax_rate_display">184.95</td>
+            </tr>
+          </table>
+          <table class="table1">
+            <tr>
+              <th class="side_header">DEN</th>
+              <th class="top_header slip_header">Slips</th>
+              <th class="top_header strip_header">Strips</th>
+              <th class="top_header bar_header">Bars</th>
+            </tr>
+            <tr>
+              <th class="side_header">LAT</th>
+              <td class="lat_display slip_display">0</td>
+              <td class="lat_display strip_display">0</td>
+              <td class="lat_display bar_display">0</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="calculator_keys">
+
+          <button type="button" value="7">7</button>
+          <button type="button" value="8">8</button>
+          <button type="button" value="9">9</button>
+          <button type="button" value="4">4</button>
+          <button type="button" value="5">5</button>
+          <button type="button" value="6">6</button>
+          <button type="button" value="1">1</button>
+          <button type="button" value="2">2</button>
+          <button type="button" value="3">3</button>
+          <button type="button" value="0">0</button>
+          <button type="button" class="decimal" value=".">.</button>
+          <button type="button" class="all-clear" value="all-clear">AC</button>
+
+        </div>
+
+        <div class="input_div">
+          <input class="calc_input">
+          <div class="currency">
+            USD
+          </div>
+        </div>
+        <div class="calc_button">CALCULATE</div>
+
+        <div class="calc_close_btn">
+          X
+        </div>
+
+      </div>
+
+      <div class="panel2">
+        <div class="dropdown_parent">
+          <label for="denomination" class="denom_label">Denomination:</label>
+          <select name="denomination" id="denomination" class="dropdown">
+            <option value="slips">Slips</option>
+            <option value="strips">Strips</option>
+            <option value="bars" selected>Bars</option>
+          </select>
+
+        </div>
+        <div class="exch_rate">
+          <label for="exch_rate">Exchange Rate:</label>
+          <input id="exch_rate" class="exch_rate_input">
+        </div>
+        <div class="tax_rate">
+          <label for="tax_rate">Tax Rate:</label>
+          <input id="tax_rate" class="tax_rate_input">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <canvas class="canvas1">
+  </canvas>
+
+  <div class="panel5">
+    <div class="canvas2_heading">
+      VARIANCE ANALYSIS SCOPE
+    </div>
+    <canvas class="canvas2">
+    </canvas>
+    <div class="panel5_close_btn">
+      X
+    </div>
+  </div>
+
+  <div class="panel7">
+    <div class="panel7_heading">
+      KANYE NEWSFEED
+    </div>
+    <div class="panel7_body">
+    </div>
+    <div class="panel7_close_btn">
+      X
+    </div>
+  </div>
+
+  <script src="lib/three.js"></script>
+  <script src="js/lat_calc.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/newsfeed.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/three_bg.js"></script>
+  <script src="js/three_box.js"></script>
+
+
+</body>
+
+
+</html>
