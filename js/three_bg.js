@@ -19,7 +19,7 @@ function init() {
   const geometry = new THREE.BufferGeometry();
   const vertices = [];
 
-  const sprite = new THREE.TextureLoader().load( '../image/circle_05.png' );
+  const sprite = new THREE.TextureLoader().load( 'image/circle_05.png' );
 
   for ( let i = 0; i < 10000; i ++ ) {
 
