@@ -2,18 +2,25 @@
 
 
 
-function startTime(elem) {
+export function startTime(elem) {
+
+  const offsetHours = 7
+  const offsetMinutes = 15
+  const offsetSeconds = 75
   let today = new Date();
-  let h = today.getHours()+7;
-  let m = today.getMinutes()+17;
-  let s = today.getSeconds()+7;
+  let h = today.getHours()+offsetHours;
+  let m = today.getMinutes()+offsetMinutes;
+  let s = today.getSeconds()+offsetSeconds;
   m = checkTime(m);
   s = checkTime(s);
   elem.innerHTML = "FST: "+ h + ":Z0:" + m + ":" + s;
   let t = setTimeout(() =>{startTime(elem)}, 1000);
+
 }
 
 function checkTime(i) {
+
   if (i < 10) {i = "0" + i}
   return i
+
 }

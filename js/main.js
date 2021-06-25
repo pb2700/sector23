@@ -1,38 +1,38 @@
+import {init as backgroundInit} from './three_bg.js'
+import {init as scopeInit} from './three_box.js'
+import {init as newsfeedInit, closeApp2 as closeNewsfeed} from './newsfeed.js'
+import {LatinumCalculator as LatCalc} from './lat_calc.js'
+import {startTime as startTime} from './clock.js'
 
 
   function mainInit(){
 
+    let newsFeedCloseBtn = document.querySelector(".newsfeed_close_btn")
+    let scopeCloseBtn = document.querySelector(".scope_close_btn")
+    let scopePanel = document.querySelector(".scope_panel")
+    let scopeIcon = document.querySelector(".app3_icon")
+    newsFeedCloseBtn.addEventListener("click", (e) => {closeNewsfeed(e)})
+    scopeCloseBtn.addEventListener("click", (e) => {closeScope(e, scopePanel)})
+    scopeIcon.addEventListener("click", (e) => {openScope(e, scopePanel)})
     startTime(document.getElementsByClassName("widget2")[0])
-
-    this.newFeedCloseBtn = document.querySelector(".panel7_close_btn")
-    this.scopeCloseBtn = document.querySelector(".panel5_close_btn")
-    this.panel5 = document.querySelector(".panel5")
-    this.app3Icon = document.querySelector(".app3_icon")
-    this.newFeedCloseBtn.addEventListener("click", (e) => {this.closeNewsFeed(e)})
-    this.scopeCloseBtn.addEventListener("click", (e) => {this.closeScope(e)})
-    this.app3Icon.addEventListener("click", (e) => {this.openApp3(e)})
+    backgroundInit()
+    scopeInit()
+    newsfeedInit()
+    calcStart()
 
   }
 
-function openApp3(){
-  panel5.style.display = "inline-block"
-}
-function closeNewsFeed(){
-  isApp2Open = false
-  panel7.style.display = "none"
-  resetNewsfeed()
-}
-function closeScope(){
-  panel5.style.display = "none"
-}
+  function openScope(e, panel){
+    panel.style.display = "inline-block"
+  }
 
-mainInit()
+  function closeScope(e, panel){
+    panel.style.display = "none"
+  }
 
-function calcStart(){
+  function calcStart(){
+    let latCalc = new LatCalc('blue', 0.721);
+    latCalc.Init()
+  }
 
-  let calculator = new LatinumCalculator('blue', 0.721);
-  calculator.Init()
-}
-
-
-calcStart()
+  mainInit()

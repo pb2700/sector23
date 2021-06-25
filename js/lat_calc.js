@@ -1,7 +1,7 @@
 
 
 
-class LatinumCalculator {
+export class LatinumCalculator {
 
   constructor(theme, bias) {
 
@@ -27,7 +27,6 @@ class LatinumCalculator {
 
 		const slipsInStrip = 100
 		const stripsInBar = 20
-
 		let pureSlips = usd * this.exchRate
     pureSlips = pureSlips - (pureSlips * this.taxRate)
 		let slips = pureSlips % slipsInStrip
@@ -191,7 +190,6 @@ class LatinumCalculator {
       default:
         break;
     }
-
 
     let latinum = this.GetLatinum(this.calcInput.value, this.currentDenomination)
     this.slipDisplay.innerHTML = +(Math.round(latinum.slips + "e+2")  + "e-2")
