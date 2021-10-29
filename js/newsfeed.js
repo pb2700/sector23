@@ -21,7 +21,8 @@ export function init(){
 async function getData(){
 
   try{
-    const response = await fetch('https://api.kanye.rest/')
+
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/'+getRandomNum() )
     return await response.json()
 
   } catch (error) {
@@ -33,7 +34,13 @@ async function getData(){
 async function updateData(){
 
   const result = await getData()
-  currentQuote = result.quote
+  currentQuote = result.title.replace(/^./, result.title[0].toUpperCase())
+
+}
+
+function getRandomNum(){
+
+  return Math.floor(Math.random() * 100) + 1
 
 }
 
