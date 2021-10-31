@@ -15,6 +15,7 @@ body{
     #465298 20px
   );
   height: 100%;
+  overflow: hidden;
 
 }
 .desktop{
