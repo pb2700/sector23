@@ -13,7 +13,7 @@ body{
     #465298 10px,
     #465298 20px
   );
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 .desktop{
