@@ -140,14 +140,14 @@ export class LatinumCalculator {
       case 'slips':
         this.thSlips.classList.add("selected_denomination")
         break;
-        case 'strips':
-          this.thStrips.classList.add("selected_denomination")
+      case 'strips':
+        this.thStrips.classList.add("selected_denomination")
         break;
-        case 'bars':
-          this.thBars.classList.add("selected_denomination")
+      case 'bars':
+        this.thBars.classList.add("selected_denomination")
         break;
-        default:
-        break;
+      default:
+      break;
     }
 
     let latinum = this.GetLatinum(this.calcInput.value, this.currentDenomination)
