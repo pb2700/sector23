@@ -1,53 +1,54 @@
 export class LatinumCalculator {
+
   constructor(theme, bias) {
-		this.bias = bias
-		this.taxRate = 0.2
-		this.exchRate = 1.17
-		this.themes = {
+    this.bias = bias
+    this.taxRate = 0.2
+    this.exchRate = 1.17
+    this.themes = {
       'royal_blue': {bg:'1201FD', text: '000000'},
-			'floral_white': {bg:'1201FD', text: '000000'},
-			'blanched_almond': {bg:'1201FD', text: '000000'},
-			'dark_magenta': {bg:'1201FD', text: '000000'},
-			'spring_green': {bg:'1201FD', text: '000000'}
-		}
-		this.theme = this.themes[theme]
+      'floral_white': {bg:'1201FD', text: '000000'},
+      'blanched_almond': {bg:'1201FD', text: '000000'},
+      'dark_magenta': {bg:'1201FD', text: '000000'},
+      'spring_green': {bg:'1201FD', text: '000000'}
+    }
+    this.theme = this.themes[theme]
     this.currentDenomination = 'bars'
   }
 
   GetLatinum(usd, view){
-		const slipsInStrip = 100
-		const stripsInBar = 20
-		let pureSlips = usd * this.exchRate
+    const slipsInStrip = 100
+    const stripsInBar = 20
+    let pureSlips = usd * this.exchRate
     pureSlips = pureSlips - (pureSlips * this.taxRate)
-		let slips = pureSlips % slipsInStrip
-		let pureStrips = Math.floor((pureSlips / slipsInStrip))
-		let strips = pureStrips % stripsInBar
-		let bars = Math.floor((pureStrips / stripsInBar))
+    let slips = pureSlips % slipsInStrip
+    let pureStrips = Math.floor((pureSlips / slipsInStrip))
+    let strips = pureStrips % stripsInBar
+    let bars = Math.floor((pureStrips / stripsInBar))
 
-		let denominations = {
-			slips: {'slips':pureSlips, 'strips':0, 'bars': 0},
-			strips: {'slips':slips, 'strips':pureStrips, 'bars': 0},
-			bars: {'slips':slips, 'strips':strips, 'bars': bars}
-		}
+    let denominations = {
+      slips: {'slips':pureSlips, 'strips':0, 'bars': 0},
+      strips: {'slips':slips, 'strips':pureStrips, 'bars': 0},
+      bars: {'slips':slips, 'strips':strips, 'bars': bars}
+    }
 
-		return denominations[view]
+    return denominations[view]
   }
 
-	SetBias(bias){
-		this.bias = bias
-	}
+  SetBias(bias){
+    this.bias = bias
+  }
 
-	SetTax(tax){
-		this.tax = tax
-	}
+  SetTax(tax){
+    this.tax = tax
+  }
 
-	ChangeColor(color){
-		this.color = color
-	}
+  ChangeColor(color){
+    this.color = color
+  }
 
-	GetBias(){
-		return this.bias
-	}
+  GetBias(){
+    return this.bias
+  }
 
   AddSelectors(){
     this.calcMain = document.querySelector(".calc_main")
@@ -84,7 +85,7 @@ export class LatinumCalculator {
     this.AddListeners()
   }
 
-	OpenCalc(){
+  OpenCalc(){
     this.calcMain.style.display = "flex"
     this.DisplayRates()
   }

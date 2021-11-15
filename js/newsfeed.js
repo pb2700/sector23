@@ -10,25 +10,19 @@ let newsfeedBody = null
 export function init(){
   newsfeedPanel = document.querySelector(".newsfeed_panel")
   newsfeedBody = document.querySelector(".newsfeed_body")
-  let newsfeedIcon = document.querySelector(".newsfeed_icon")
-  newsfeedIcon.addEventListener("click", (e) => {openNewsfeed(e)})
-  let newsFeedCloseBtn = document.querySelector(".newsfeed_close_btn")
-  newsFeedCloseBtn.addEventListener("click", (e) => {closeNewsfeed(e)})
+  document.querySelector(".newsfeed_icon").addEventListener("click", (e) => {openNewsfeed(e)})
+  document.querySelector(".newsfeed_close_btn").addEventListener("click", (e) => {closeNewsfeed(e)})
 }
 
-async function getData(){
+async function getNewsData(){
   try{
     const response = await fetch('https://jsonplaceholder.typicode.com/posts/'+getRandomNum() )
-    return await response.json()
+    const result = await response.json()
+    currentQuote = result.title.replace(/^./, result.title[0].toUpperCase())
 
   } catch (error) {
     console.log('ERROR: ', error)
   }
-}
-
-async function updateData(){
-  const result = await getData()
-  currentQuote = result.title.replace(/^./, result.title[0].toUpperCase())
 }
 
 function getRandomNum(){
@@ -38,7 +32,7 @@ function getRandomNum(){
 function openNewsfeed(){
   if(isNewsfeedOpen) return
   isNewsfeedOpen = true
-  updateData()
+  getNewsData()
   newsfeedPanel.style.display = "inline-block"
   newsfeedBody.innerHTML = letters
   typeText()
@@ -56,7 +50,7 @@ async function typeText(){
   if(letters.length === currentQuote.length){
     letterIndex = 0
     letters = ""
-    await updateData()
+    await getNewsData()
     timeout1 = setTimeout(typeText, 800)
   }
   else{
