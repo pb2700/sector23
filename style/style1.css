@@ -19,9 +19,8 @@ body{
   background-image: radial-gradient(farthest-corner at 87% 92%,
   rgba(51, 231, 255, 0.562) 0%, rgba(66, 51, 238, 0.603) 50%);
   display: block;
-  min-height: 94vh;
   overflow: hidden;
-  height: 97vh;
+  height: 97vw;
   width: 90vw;
   left: 50%;
   top: 50%;
@@ -566,5 +565,17 @@ label{
     align-self: flex-start;
   }
 
+}
+
+
+@media screen and (max-width: 501px) {
+.desktop{
+  height: 90vh;
+  width: 90vw;
+  left: 50%;
+  top: 0px;
+  transform: translateX(-50%);
+}
 
 }
+
