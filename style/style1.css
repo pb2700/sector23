@@ -3,6 +3,9 @@
 }
 body{
   background-color: rgb(107, 107, 107);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: repeating-linear-gradient(
     45deg,
     #444444,
@@ -15,17 +18,13 @@ body{
   overflow: hidden;
 }
 .desktop{
-  position: absolute;
+  position: relative;
   background-image: radial-gradient(farthest-corner at 87% 92%,
   rgba(51, 231, 255, 0.562) 0%, rgba(66, 51, 238, 0.603) 50%);
+  width: 94vw;
   display: block;
   min-height: 94vh;
   overflow: hidden;
-  height: 97vh;
-  width: 90vw;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 .calc_main{
   position: absolute;
