@@ -31,6 +31,7 @@ body{
   display: none;
   top: 2vh;
   left: 13vw;
+  font-size: 15px;
 }
 .calc_input{
   margin: 0.5rem;
@@ -154,7 +155,7 @@ input:focus {
 .info1 tr td:nth-child(2n){
   color: rgb(167, 167, 167);
   font-family: 'open_24_display_stregular';
-  font-size: 1.4rem;
+  font-size: 1.1em;
 }
 .info1 td{
   padding: 0.4rem;
@@ -344,7 +345,7 @@ select{
   align-items: center;
   margin: 0.3rem;
   font-family: 'zektonregular';
-  font-size: 1.1rem;
+  font-size: 1.1em;
 }
 .widget2{
   display: inline-flex;
@@ -357,11 +358,11 @@ select{
   align-items: center;
   margin: 0.3rem;
   font-family: 'zektonregular';
-  font-size: 1.1rem;
+  font-size: 1.1em;
 }
 .slip_display, .strip_display, .bar_display{
   font-family: 'open_24_display_stregular';
-  font-size: 2rem;
+  font-size: 1.1em;
 }
 .input_div{
   position: relative;
@@ -373,7 +374,7 @@ select{
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   margin: 0.5rem;
-  margin-left: 0.1rem;
+  margin-left: 0.1em;
 }
 .bg_canvas{
   position: absolute;
@@ -388,13 +389,14 @@ select{
 .scope_panel{
   position: absolute;
   display: none;
-  right: 6vw;
+  right: 48px;
   bottom: 5rem;
   width: 200px;
   height: 200px;
   border: solid yellowgreen;
   z-index: 2;
   border-bottom-right-radius: 2rem;
+  background-color: #46529888;
 }
 .scope_canvas{
   position: absolute;
@@ -421,7 +423,7 @@ select{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.5rem;
+  font-size: 0.5em;
   font-family: 'arcade_interlacedregular', Arial, Helvetica, sans-serif;
   color: white;
 }
@@ -431,24 +433,29 @@ label{
 .calc_close_btn{
   position: absolute;
   display: inline-block;
-  right: 3.5%;
-  top: 0.9rem;
-  width: 1rem;
-  height: 1rem;
-  font-family: 'arcade_interlacedregular', Arial, Helvetica, sans-serif;
-  color: #888;
+  right: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  border: 1px solid;
 }
 .newsfeed_panel{
   position: absolute;
   display: none;
-  right: 6vw;
+  right: 48px;
   top: 7rem;
   width: 200px;
   height: 200px;
   border: solid yellowgreen;
   z-index: 2;
   border-bottom-right-radius: 2rem;
+  background-color: #46529888;
 }
 .newsfeed_close_btn{
   position: absolute;
@@ -460,7 +467,7 @@ label{
   border: solid yellowgreen;
   z-index: 2;
   font-family: 'zektonregular';
-  font-size: 1.1rem;
+  font-size: 1.1em;
   color: white;
   align-items: center;
   justify-content: center;
@@ -476,7 +483,7 @@ label{
   border: solid yellowgreen;
   z-index: 2;
   font-family: 'zektonregular';
-  font-size: 1.1rem;
+  font-size: 1.1em;
   color: white;
   align-items: center;
   justify-content: center;
@@ -496,16 +503,16 @@ label{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.5rem;
+  font-size: 0.5em;
   font-family: 'arcade_interlacedregular', Arial, Helvetica, sans-serif;
   color: white;
 }
 .newsfeed_body{
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.05em;
   color: white;
-  padding: 0.5rem;
+  padding: 0.5em;
   height: 95%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -537,4 +544,24 @@ label{
          url('../font/zekton_rg-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@media screen and (max-width: 720px) {
+
+  .calc_main{
+    width: 393px;
+    font-size: 12px;
+    right: 2vw;
+    flex-direction: column;
+  }
+  .panel2::before{
+    top: -2.2rem;
+    left: 3rem;
+    transform: rotate(90deg);
+  }
+  .panel2{
+    align-self: flex-start;
+  }
+
+
 }
