@@ -16,15 +16,19 @@ body{
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+
 }
 .desktop{
   position: relative;
   background-image: radial-gradient(farthest-corner at 87% 92%,
   rgba(51, 231, 255, 0.562) 0%, rgba(66, 51, 238, 0.603) 50%);
-  width: 94vw;
-  display: block;
-  overflow: hidden;
-  height: 97vw;
+  width: 90%;
+  height: 95%;
+  display: inline-block;
+  overflow: hidden;;
 }
 .calc_main{
   position: absolute;
@@ -566,16 +570,3 @@ label{
   }
 
 }
-
-
-@media screen and (max-width: 501px) {
-.desktop{
-  height: 90vh;
-  width: 90vw;
-  left: 50%;
-  top: 0px;
-  transform: translateX(-50%);
-}
-
-}
-
